@@ -1,0 +1,20 @@
+<style>
+table, tr, td, th {
+        border:1px solid white;
+        border-collapse: collapse;
+        padding:5px;
+        font-size:15px;
+padding:5px;
+       
+      }
+      th {
+        color:white;
+        background-color:green;
+        border: 1px solid white;
+      }
+      td {
+        border:1px solid black;
+      }
+td:nth-child(3) {
+text-align:center;
+</style>
