@@ -27,12 +27,12 @@ function GetBookings(){
         row.insertCell(4).innerHTML = ""; //Remarks
         row.insertCell(5).innerHTML = "<button id='" + buttonId +"' class='btn btn-danger'>Delete</button><br/>";
 
-        
         bookingIds.push(buttonId);
            
       }
+
       for (let j = 0; j < bookingIds.length; j++){
-        console.log("outside : " + j);
+        //console.log("outside : " + j);
         let el = document.getElementById(bookingIds[j]);
         el.addEventListener("click", function(){
           //console.log(typeof bookingIds[j])
