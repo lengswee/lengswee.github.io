@@ -19,7 +19,7 @@ function GetBookings(){
         var gId = json.booking[i].id;
         var buttonId = "delete" + gId; //<--
 
-        let row = bookings.insertRow(bookings.rows.length);
+        let row = booking.insertRow(booking.rows.length);
         row.insertCell(0).innerHTML = gId;
         row.insertCell(1).innerHTML = gName;
         row.insertCell(2).innerHTML = gEmail;
@@ -32,11 +32,11 @@ function GetBookings(){
       }
 
       for (let j = 0; j < bookingIds.length; j++){
-        //console.log("outside : " + j);
+        //console.log(bookingIds[j]);
         let el = document.getElementById(bookingIds[j]);
         el.addEventListener("click", function(){
           //console.log(typeof bookingIds[j])
-          let theId = bookingIds[j].replace("delete","");
+          let theId = bookingIds[j].replace("delete", "");
           DeleteBooking(theId);
         });
       }
