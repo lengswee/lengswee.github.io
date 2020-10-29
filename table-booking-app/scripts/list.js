@@ -9,7 +9,7 @@ function GetBookings(){
     .then(json => {
       // Do something with the data
       //console.log(json.booking);
-      var bookings = document.getElementById("booking-list");
+      var booking = document.getElementById("booking-list");
       var bookingIds = [];
      
       for(var i=0; i<json.booking.length; i++){
