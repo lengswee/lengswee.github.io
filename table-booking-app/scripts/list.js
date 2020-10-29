@@ -17,14 +17,15 @@ function GetBooking(){
         var gEmail = json.booking[i].email;
         var gPax = json.booking[i].pax;
         var gId = json.booking[i].id;
-        var buttonId = "delete" + gId; //<--
+        var gRemarks = json.booking[i].remark;
+        var buttonId = "delete" + gId; 
 
         let row = booking.insertRow(booking.rows.length);
         row.insertCell(0).innerHTML = gId;
         row.insertCell(1).innerHTML = gName;
         row.insertCell(2).innerHTML = gEmail;
         row.insertCell(3).innerHTML = gPax;
-        row.insertCell(4).innerHTML = ""; //Remarks
+        row.insertCell(4).innerHTML = gRemarks;
         row.insertCell(5).innerHTML = "<button id='" + buttonId +"' class='btn btn-danger'>Delete</button><br/>";
 
         bookingIds.push(buttonId);
