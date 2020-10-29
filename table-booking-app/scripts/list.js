@@ -54,7 +54,7 @@ function GetBookings(){
           location.reload();
         });
       } else {
-        alert("Delete cancelled.";)
+        alert("Delete cancelled.");
       }
       
       
