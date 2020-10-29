@@ -1,8 +1,8 @@
 window.addEventListener("load",function(){
-    GetBooking();
+    GetBookings();
 });
 
-function GetBooking(){
+function GetBookings(){
     let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking';
     fetch(url)
     .then((response) => response.json())
