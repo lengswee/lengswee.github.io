@@ -28,16 +28,16 @@ function GetBooking(){
         row.insertCell(4).innerHTML = gRemarks;
         row.insertCell(5).innerHTML = "<button id='" + buttonId +"' class='btn btn-danger'>Delete</button><br/>";
 
-        bookingIds.push(buttonId);
+        bookingId.push(buttonId);
            
       }
 
-      for (let j = 0; j < bookingIds.length; j++){
+      for (let j = 0; j < bookingId.length; j++){
         //console.log(bookingIds[j]);
-        let el = document.getElementById(bookingIds[j]);
+        let el = document.getElementById(bookingId[j]);
         el.addEventListener("click", function(){
           //console.log(typeof bookingIds[j])
-          let theId = bookingIds[j].replace("delete", "");
+          let theId = bookingId[j].replace("delete", "");
           DeleteBooking(theId);
         });
       }
