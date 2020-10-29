@@ -1,15 +1,15 @@
 window.addEventListener("load",function(){
-    GetBookings();
+    GetBooking();
 });
 
-function GetBookings(){
+function GetBooking(){
     let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking';
     fetch(url)
     .then((response) => response.json())
     .then(json => {
       // Do something with the data
       //console.log(json.booking);
-      var bookings = document.getElementById("booking-list");
+      var booking = document.getElementById("booking-list");
       var bookingIds = [];
      
       for(var i=0; i<json.booking.length; i++){
@@ -19,7 +19,7 @@ function GetBookings(){
         var gId = json.booking[i].id;
         var buttonId = "delete" + gId; //<--
 
-        let row = bookings.insertRow(booking.rows.length);
+        let row = booking.insertRow(booking.rows.length);
         row.insertCell(0).innerHTML = gId;
         row.insertCell(1).innerHTML = gName;
         row.insertCell(2).innerHTML = gEmail;
