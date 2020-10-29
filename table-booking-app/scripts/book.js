@@ -4,7 +4,8 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
       booking: {
         name:guestName,
         email:guestEmail,
-        pax:guestPax
+        pax:guestPax,
+        remarks: guestRemarks
       }
     }
     fetch(url, {
@@ -18,8 +19,8 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
     .then(json => {
       // Do something with object
       console.log(json.booking);
-      //document.getElementById("bookMsg").innerHTML = json.booking.name + "successfully added!";
-      //GetBookings();
+      alert(json.booking.name + "successfully added!");
+      
     });
     }
 
@@ -28,9 +29,9 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
             let name = document.getElementById("guestName").value;
                 let email = document.getElementById("guestEmail").value;
                 let pax = document.getElementById("guestPax").value;
-                let remark = document.getElementById("guestRemarks").value;
+                let remarks = document.getElementById("guestRemarks").value;
         
-                BookNow(name,email,pax,remarks)
+                BookNow(name, email, pax, remarks)
         
             });
     });
