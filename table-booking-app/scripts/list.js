@@ -9,7 +9,7 @@ function GetBooking(){
     .then(json => {
       // Do something with the data
       //console.log(json.booking);
-      var booking = document.getElementById("booking-list");
+      var bookings = document.getElementById("booking-list");
       var bookingIds = [];
      
       for(var i=0; i<json.booking.length; i++){
@@ -32,12 +32,12 @@ function GetBooking(){
            
       }
 
-      for (let j = 0; j < bookingId.length; j++){
+      for (let j = 0; j < bookingIds.length; j++){
         //console.log(bookingIds[j]);
-        let el = document.getElementById(bookingId[j]);
+        let el = document.getElementById(bookingIds[j]);
         el.addEventListener("click", function(){
           //console.log(typeof bookingIds[j])
-          let theId = bookingId[j].replace("delete", "");
+          let theId = bookingIds[j].replace("delete", "");
           DeleteBooking(theId);
         });
       }
