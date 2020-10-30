@@ -20,7 +20,7 @@ function GetBookings(){
         var gRemarks = json.booking[i].remarks;
         var buttonId = "delete" + gId; 
 
-        let row = booking.insertRow(booking.rows.length);
+        let row = bookings.insertRow(bookings.rows.length);
         row.insertCell(0).innerHTML = gId;
         row.insertCell(1).innerHTML = gName;
         row.insertCell(2).innerHTML = gEmail;
