@@ -1,4 +1,4 @@
-Vue.component("todo-item" {
+Vue.component("todo-item", {
     props: ["todo"],
     template: "<li>{{ todo.text}}</li>"
 });
@@ -12,4 +12,4 @@ Vue.component("todo-item" {
              { id: 3, text: "Protiens"}
          ]
      }
- })
+ });
