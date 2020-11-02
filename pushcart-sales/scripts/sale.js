@@ -2,10 +2,10 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
     let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking';
     let body = {
       booking: {
-        name:guestName,
-        email:guestEmail,
-        pax:guestPax,
-        remarks: guestRemarks
+        itemcode:guestName,
+        price:guestEmail,
+        quantity:guestPax,
+        total: guestRemarks
       }
     }
     fetch(url, {
@@ -26,12 +26,12 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
 
     window.addEventListener("load",function(){
         document.getElementById("bookNow").addEventListener("click", function(){
-            let name = document.getElementById("guestName").value;
-                let email = document.getElementById("guestEmail").value;
-                let pax = document.getElementById("guestPax").value;
-                let remarks = document.getElementById("guestRemarks").value;
+            let itemcode = document.getElementById("guestName").value;
+                let price = document.getElementById("guestEmail").value;
+                let quantity = document.getElementById("guestPax").value;
+                let total = document.getElementById("guestRemarks").value;
         
-                BookNow(name, email, pax, remarks)
+                BookNow(itemcode, price, quantity, total)
         
             });
     });
