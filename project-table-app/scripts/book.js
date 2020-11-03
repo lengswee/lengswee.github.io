@@ -5,7 +5,7 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks, guestDate){
         name:guestName,
         email:guestEmail,
         pax:guestPax,
-        remarks:guestRemarks
+        remarks:guestRemarks,
         date:guestDate
       }
     }
@@ -31,7 +31,7 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks, guestDate){
                 let email = document.getElementById("guestEmail").value;
                 let pax = document.getElementById("guestPax").value;
                 let remarks = document.getElementById("guestRemarks").value;
-                let remarks = document.getElementById("guestDate").value;
+                let date = document.getElementById("guestDate").value;
         
                 BookNow(name, email, pax, remarks, date)
         
