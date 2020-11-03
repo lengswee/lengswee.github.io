@@ -18,7 +18,7 @@ function GetBookings(){
         var gPax = json.booking[i].pax;
         var gId = json.booking[i].id;
         var gRemarks = json.booking[i].remarks;
-        var gRemarks = json.booking[i].date;
+        var gDate = json.booking[i].date;
         var buttonId = "delete" + gId; 
 
         let row = bookings.insertRow(bookings.rows.length);
