@@ -1,11 +1,12 @@
-function BookNow(guestName,guestEmail,guestPax, guestRemarks){
-    let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking';
+function SaleNow(shopItemcode,shopPrice,shopQuantity, shopTotal){
+  let url = 'https://api.sheety.co/0c070c57cf2f4892b8315fb13d8077b7/untitledSpreadsheet/sale';
     let body = {
-      booking: {
-        itemcode:guestName,
-        price:guestEmail,
-        quantity:guestPax,
-        total: guestRemarks
+      sale: {
+        itemcode:shopItemcode,
+        price:shopPrice,
+        quantity:shopQuantity,
+        total:shopTotal,
+        date:shopDate
       }
     }
     fetch(url, {
@@ -18,18 +19,19 @@ function BookNow(guestName,guestEmail,guestPax, guestRemarks){
     .then((response) => response.json())
     .then(json => {
       // Do something with object
-      console.log(json.booking);
-      alert(json.booking.itemcode + "successfully added!");
+      console.log(json.sale);
+      alert(json.sale.itemcode + "successfully added!");
       
     });
     }
 
     window.addEventListener("load",function(){
-        document.getElementById("bookNow").addEventListener("click", function(){
-            let itemcode = document.getElementById("guestName").value;
-                let price = document.getElementById("guestEmail").value;
-                let quantity = document.getElementById("guestPax").value;
-                let total = document.getElementById("guestRemarks").value;
+        document.getElementById("saleNow").addEventListener("click", function(){
+            let itemcode = document.getElementById("shopItemcode").value;
+                let price = document.getElementById("shopPrice").value;
+                let quantity = document.getElementById("shopQuantity").value;
+                let total = document.getElementById("shopTotal").value;
+                let date = document.getElementById("shopDate").value;
         
                 BookNow(itemcode, price, quantity, total)
         

@@ -1,44 +1,46 @@
 window.addEventListener("load",function(){
-    GetBookings();
+    GetSales();
 });
 
-function GetBookings(){
-    let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking';
+function GetSales(){
+  let url = 'https://api.sheety.co/0c070c57cf2f4892b8315fb13d8077b7/untitledSpreadsheet/sale';
     fetch(url)
     .then((response) => response.json())
     .then(json => {
       // Do something with the data
       //console.log(json.booking);
-      var bookings = document.getElementById("booking-list");
-      var bookingIds = [];
+      var sales = document.getElementById("sale-list");
+      var saleIds = [];
      
-      for(var i=0; i<json.booking.length; i++){
-        var gName = json.booking[i].name;
-        var gEmail = json.booking[i].email;
-        var gPax = json.booking[i].pax;
-        var gId = json.booking[i].id;
-        var gRemarks = json.booking[i].remarks;
+      for(var i=0; i<json.sale.length; i++){
+        var gItemcode = json.sale[i].name;
+        var gPrice = json.sale[i].email;
+        var gQuantity = json.sale[i].pax;
+        var gId = json.sale[i].id;
+        var gTotal = json.sale[i].total;
+        var gDate = json.sale[i].date;
         var buttonId = "delete" + gId; 
 
         let row = bookings.insertRow(bookings.rows.length);
         row.insertCell(0).innerHTML = gId;
-        row.insertCell(1).innerHTML = gName;
-        row.insertCell(2).innerHTML = gEmail;
-        row.insertCell(3).innerHTML = gPax;
-        row.insertCell(4).innerHTML = gRemarks;
-        row.insertCell(5).innerHTML = "<button id='" + buttonId +"' class='btn btn-danger'>Delete</button><br/>";
+        row.insertCell(1).innerHTML = gItemcode;
+        row.insertCell(2).innerHTML = gPrice;
+        row.insertCell(3).innerHTML = gQuantity;
+        row.insertCell(4).innerHTML = gTotal;
+        row.insertCell(5).innerHTML = gDate;
+        row.insertCell(6).innerHTML = "<button id='" + buttonId +"' class='btn btn-danger'>Delete</button><br/>";
 
         bookingIds.push(buttonId);
            
       }
 
-      for (let j = 0; j < bookingIds.length; j++){
+      for (let j = 0; j < saleIds.length; j++){
         //console.log(bookingIds[j]);
-        let el = document.getElementById(bookingIds[j]);
+        let el = document.getElementById(saleIds[j]);
         el.addEventListener("click", function(){
-          //console.log(typeof bookingIds[j])
-          let theId = bookingIds[j].replace("delete", "");
-          DeleteBooking(theId);
+          //console.log(typeof saleIds[j])
+          let theId = saleIds[j].replace("delete", "");
+          DeleteSale(theId);
         });
       }
       
@@ -47,7 +49,7 @@ function GetBookings(){
 
     function DeleteBooking(id){
       if(confirm("Are you sure you want to delete?")){
-        let url = 'https://api.sheety.co/ee581d1468ba79b9f91410ef97673070/bookingApp/booking/' +id;
+        let url = 'https://api.sheety.co/0c070c57cf2f4892b8315fb13d8077b7/untitledSpreadsheet/sale' +id;
         fetch(url, {
           method: 'DELETE',
         })
